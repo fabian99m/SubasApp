@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.proyecto.subasapp.Bdatos.Querys;
 import com.proyecto.subasapp.Modelo.Ofertante;
 import com.proyecto.subasapp.R;
 
@@ -57,7 +58,7 @@ public class FragOfertante extends Fragment implements View.OnClickListener {
         } else {
             subas.ofer.add(new Ofertante(nombre.getText().toString(), Integer.parseInt(cedula.getText().toString()), Float.parseFloat(deposito.getText().toString())));
             Toast.makeText(getActivity(), "Ofertante guardado con éxito!", Toast.LENGTH_SHORT).show();
-            // Querys.GuardaOferBD(getActivity(), nombre, cedula, deposito);
+             Querys.GuardaOferBD(getActivity(), nombre, cedula, deposito);
             nombre.setText("");
             cedula.setText("");
             deposito.setText("");

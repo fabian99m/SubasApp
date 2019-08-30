@@ -25,6 +25,11 @@
     <string name="todo">TODO</string>
     <string name="list_ofer">Ofertantes</string>
     <string name="listar">Listar</string>
+    <string-array name="opc">
+        <item>Elimar ofertante</item>
+        <item>Editar ofertante</item>
+        <item>Cancelar</item>
+    </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

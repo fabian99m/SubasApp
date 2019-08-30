@@ -8,6 +8,7 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import com.google.android.material.navigation.NavigationView;
+ import com.proyecto.subasapp.Bdatos.Querys;
  import com.proyecto.subasapp.Modelo.Ofertante;
  import com.proyecto.subasapp.Modelo.Subasta;
  import com.proyecto.subasapp.R;
@@ -43,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        Querys.CargarOferBD(this);
     }
 
     @Override
