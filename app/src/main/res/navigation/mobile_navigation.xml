@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/fragOfertante">
+
+    <fragment
+        android:id="@+id/fragOfertante"
+        android:name="com.proyecto.subasapp.FragOfertante"
+        android:label="@string/ofertante"
+        tools:layout="@layout/fragment_frag_ofertante" />
+    <fragment
+        android:id="@+id/listarOfertantes"
+        android:name="com.proyecto.subasapp.ListarOfertantes"
+        android:label="@string/list_ofer"
+        tools:layout="@layout/fragment_listar_ofertantes" />
+</navigation>

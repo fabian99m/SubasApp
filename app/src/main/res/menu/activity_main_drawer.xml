@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/fragOfertante"
+            android:icon="@drawable/account_arrow_right"
+            android:title="@string/ofertante" />
+
+
+    </group>
+
+    <item android:title="@string/listar">
+        <menu>
+            <item
+                android:id="@+id/listarOfertantes"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="@string/list_ofer" />
+        </menu>
+    </item>
+
+</menu>
