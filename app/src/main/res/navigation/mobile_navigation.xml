@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/fragOfertante"
-        android:name="com.proyecto.subasapp.FragOfertante"
+        android:name="com.proyecto.subasapp.UI.FragOfertante"
         android:label="@string/ofertante"
         tools:layout="@layout/fragment_frag_ofertante" />
     <fragment
         android:id="@+id/listarOfertantes"
-        android:name="com.proyecto.subasapp.ListarOfertantes"
+        android:name="com.proyecto.subasapp.UI.ListarOfertantes"
         android:label="@string/list_ofer"
         tools:layout="@layout/fragment_listar_ofertantes" />
 </navigation>

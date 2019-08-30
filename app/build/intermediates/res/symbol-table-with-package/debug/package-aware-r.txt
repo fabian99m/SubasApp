@@ -1064,6 +1064,7 @@ drawable notify_panel_notification_icon_bg
 drawable side_nav_bar
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable users
 id ALT
 id CTRL
 id FUNCTION
@@ -1352,6 +1353,7 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
+layout fragment_frag_celulares
 layout fragment_frag_ofertante
 layout fragment_listar_ofertantes
 layout listar_ofertantes

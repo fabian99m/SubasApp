@@ -1,4 +1,4 @@
-package com.proyecto.subasapp;
+package com.proyecto.subasapp.UI;
 
 
 import android.view.LayoutInflater;
@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.proyecto.subasapp.Modelo.Ofertante;
+import com.proyecto.subasapp.R;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package com.proyecto.subasapp;
+package com.proyecto.subasapp.UI;
 
  import android.os.Bundle;
 
@@ -10,6 +10,7 @@ import androidx.navigation.ui.NavigationUI;
 import com.google.android.material.navigation.NavigationView;
  import com.proyecto.subasapp.Modelo.Ofertante;
  import com.proyecto.subasapp.Modelo.Subasta;
+ import com.proyecto.subasapp.R;
 
  import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;

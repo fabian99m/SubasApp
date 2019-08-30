@@ -1,4 +1,4 @@
-package com.proyecto.subasapp;
+package com.proyecto.subasapp.UI;
 
 
 import android.os.Bundle;
@@ -10,7 +10,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import static com.proyecto.subasapp.MainActivity.subas;
+import com.proyecto.subasapp.R;
+
+import static com.proyecto.subasapp.UI.MainActivity.subas;
 
 
 public class ListarOfertantes extends Fragment {

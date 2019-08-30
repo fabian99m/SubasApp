@@ -1,4 +1,4 @@
-package com.proyecto.subasapp;
+package com.proyecto.subasapp.UI;
 
 
 import android.os.Bundle;
@@ -13,8 +13,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.proyecto.subasapp.Modelo.Ofertante;
+import com.proyecto.subasapp.R;
 
-import static com.proyecto.subasapp.MainActivity.subas;
+import static com.proyecto.subasapp.UI.MainActivity.subas;
 
 
 public class FragOfertante extends Fragment implements View.OnClickListener {
