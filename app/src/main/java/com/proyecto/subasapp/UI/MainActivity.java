@@ -25,7 +25,7 @@ import android.view.Menu;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static Subasta subas = new Subasta(new ArrayList<Ofertante>());
+    public static Subasta subas = new Subasta(new ArrayList<>());
 
 
 
@@ -42,13 +42,12 @@ public class MainActivity extends AppCompatActivity {
         NavigationView navigationView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.fragOfertante,R.id.listarOfertantes).setDrawerLayout(drawer).build();
+        mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.fragOfertante,R.id.listarOfertantes,R.id.fragCelular).setDrawerLayout(drawer).build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
         Querys.CargarOferBD(this);
-
 
     }
 
@@ -62,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onSupportNavigateUp() {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
-                || super.onSupportNavigateUp();
+        return NavigationUI.navigateUp(navController, mAppBarConfiguration) || super.onSupportNavigateUp();
     }
 }

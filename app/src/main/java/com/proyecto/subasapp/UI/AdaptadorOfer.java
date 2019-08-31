@@ -4,18 +4,16 @@ package com.proyecto.subasapp.UI;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.proyecto.subasapp.Bdatos.Querys;
 import com.proyecto.subasapp.Modelo.Ofertante;
 import com.proyecto.subasapp.R;
@@ -75,18 +73,20 @@ public class AdaptadorOfer extends RecyclerView.Adapter<AdaptadorOfer.ViewHolder
 
             final AlertDialog.Builder builder = new AlertDialog.Builder(c);
             builder.setTitle("Opciones"+" : "+ofertante.get(getAdapterPosition()).getNombre())
-                    .setItems(R.array.opc, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-
-                            if(which==0){
+                    .setItems(R.array.opc, (dialog, which) -> {
+                        if(which==0){
+                            try {
                                 Querys.ElimnarOferBD(c,ofertante.get(getAdapterPosition()).getCedula());
                                 ofertante.remove(getAdapterPosition());
                                 notifyDataSetChanged();
                                 Toast.makeText(c,"Eliminado con éxito!", Toast.LENGTH_SHORT).show();
+                            }catch (Exception e) {
+                                Toast.makeText(c,"Error al eliminar ofertante!", Toast.LENGTH_SHORT).show();
+                                e.printStackTrace();
                             }
-                            else if(which==1){
-                                Editar(c);
-                            }
+                        }
+                        else if(which==1){
+                            Editar(c);
                         }
                     });
           builder.create();
@@ -107,9 +107,8 @@ public class AdaptadorOfer extends RecyclerView.Adapter<AdaptadorOfer.ViewHolder
             nombre.setText(ofertante.get(getAdapterPosition()).getNombre());
             cedula.setText(String.valueOf(ofertante.get(getAdapterPosition()).getCedula()));
             deposito.setText(String.valueOf(ofertante.get(getAdapterPosition()).getDeposito()));
-            builder.setPositiveButton("Guardar", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int id) {
+
+            builder.setPositiveButton("Guardar", (dialog,id) -> {
                     int i=getAdapterPosition();
                     if (nombre.getText().toString().isEmpty() || nombre.getText().toString().trim().equals("")) {
                         Toast.makeText(ac, "Ingrese un nombre de ofertante!!", Toast.LENGTH_SHORT).show();
@@ -118,19 +117,19 @@ public class AdaptadorOfer extends RecyclerView.Adapter<AdaptadorOfer.ViewHolder
                     } else if (deposito.getText().toString().isEmpty()) {
                         Toast.makeText(ac, "Ingrese deposito!!", Toast.LENGTH_SHORT).show();
                     } else {
-                        Querys.EditarOferBD(c,ofertante.get(i).getCedula(),nombre.getText().toString(),Integer.parseInt(cedula.getText().toString()), Float.parseFloat(deposito.getText().toString()));
-                        ofertante.get(i).setNombre(nombre.getText().toString());
-                        ofertante.get(i).setCedula(Integer.parseInt(cedula.getText().toString()));
-                        ofertante.get(i).setDeposito(Float.parseFloat(deposito.getText().toString()));
-                        notifyDataSetChanged();
-                        Toast.makeText(c, "Modificado con éxito!", Toast.LENGTH_SHORT).show();
+                        try {
+                            Querys.EditarOferBD(c,ofertante.get(i).getCedula(),nombre.getText().toString(),Integer.parseInt(cedula.getText().toString()), Float.parseFloat(deposito.getText().toString()));
+                            ofertante.get(i).setNombre(nombre.getText().toString());
+                            ofertante.get(i).setCedula(Integer.parseInt(cedula.getText().toString()));
+                            ofertante.get(i).setDeposito(Float.parseFloat(deposito.getText().toString()));
+                            notifyDataSetChanged();
+                            Toast.makeText(c, "Modificado con éxito!", Toast.LENGTH_SHORT).show();
+                        } catch (Exception e) {
+                            Toast.makeText(c, "Error al modificar ofertante!", Toast.LENGTH_SHORT).show();
+                            e.printStackTrace();
+                        }
                     }
-                }
-            }).setNegativeButton("Cerrar", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int id) {
-                    dialog.cancel();
-                }
-            });
+            }).setNegativeButton("Cerrar", (dialog,id) -> dialog.cancel());
             builder.create();
             builder.show();
         }

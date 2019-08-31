@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
+    android:label="@string/celu"
     app:startDestination="@+id/fragOfertante">
 
     <fragment
@@ -15,4 +16,9 @@
         android:name="com.proyecto.subasapp.UI.ListarOfertantes"
         android:label="@string/list_ofer"
         tools:layout="@layout/fragment_listar_ofertantes" />
+    <fragment
+        android:id="@+id/fragCelular"
+        android:name="com.proyecto.subasapp.UI.FragCelular"
+        android:label="@string/celu"
+        tools:layout="@layout/fragment_frag_celulares" />
 </navigation>

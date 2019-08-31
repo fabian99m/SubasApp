@@ -9,6 +9,10 @@
             android:id="@+id/fragOfertante"
             android:icon="@drawable/account_arrow_right"
             android:title="@string/ofertante" />
+        <item
+            android:id="@+id/fragCelular"
+            android:icon="@drawable/cellphone"
+            android:title="@string/celu" />
 
 
     </group>
