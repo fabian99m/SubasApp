@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
 
     public static Subasta subas = new Subasta(new ArrayList<Ofertante>());
 
+
+
     private AppBarConfiguration mAppBarConfiguration;
 
     @Override
@@ -46,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
 
         Querys.CargarOferBD(this);
+
+
     }
 
     @Override

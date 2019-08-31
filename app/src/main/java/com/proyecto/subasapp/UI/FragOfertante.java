@@ -40,7 +40,6 @@ public class FragOfertante extends Fragment implements View.OnClickListener {
         return v;
     }
 
-
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.bt1) {
@@ -49,11 +48,12 @@ public class FragOfertante extends Fragment implements View.OnClickListener {
     }
 
     public void GuardarOfertante() {
+
         if (nombre.getText().toString().isEmpty() || nombre.getText().toString().trim().equals("")) {
             Toast.makeText(getActivity(), "Ingrese un nombre de ofertante!!", Toast.LENGTH_SHORT).show();
-        } else if (cedula.getText().toString().isEmpty() || nombre.getText().toString().trim().equals("")) {
+        } else if (cedula.getText().toString().isEmpty()) {
             Toast.makeText(getActivity(), "Ingrese un número de cédula!!", Toast.LENGTH_SHORT).show();
-        } else if (deposito.getText().toString().isEmpty() || nombre.getText().toString().trim().equals("")) {
+        } else if (deposito.getText().toString().isEmpty()) {
             Toast.makeText(getActivity(), "Ingrese deposito!!", Toast.LENGTH_SHORT).show();
         } else {
             subas.ofer.add(new Ofertante(nombre.getText().toString(), Integer.parseInt(cedula.getText().toString()), Float.parseFloat(deposito.getText().toString())));

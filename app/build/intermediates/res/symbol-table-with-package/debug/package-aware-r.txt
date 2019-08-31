@@ -1132,9 +1132,12 @@ id dimensions
 id direct
 id disableHome
 id drawer_layout
+id ecedula
+id edeposito
 id edit_query
 id end
 id end_padder
+id enombre
 id enterAlways
 id enterAlwaysCollapsed
 id etCedula
@@ -1354,6 +1357,7 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
+layout editar_ofertante
 layout fragment_frag_celulares
 layout fragment_frag_ofertante
 layout fragment_listar_ofertantes

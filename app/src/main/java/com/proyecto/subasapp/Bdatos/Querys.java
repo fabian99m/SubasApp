@@ -15,7 +15,6 @@ public class Querys {
 
 
     public static void GuardaOferBD(Activity a, EditText nombre, EditText cedula, EditText deposito) {
-
         Conexion con = new Conexion(a, "datos", null, 1);
         SQLiteDatabase db = con.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -37,15 +36,24 @@ public class Querys {
                 subas.ofer.add(new Ofertante(cursor.getString(0), cursor.getInt(1), cursor.getFloat(2)));
             }
         }
+        cursor.close();
         db.close();
         con.close();
     }
 
-    public static void ElimnarOferBD(Context c, int cedula) {
+    public static void ElimnarOferBD(Context c, int id) {
         Conexion con = new Conexion(c, "datos", null, 1);
         SQLiteDatabase db = con.getWritableDatabase();
-         db.rawQuery("SELECT * FROM " + Utilidades.TABLA_OFERTANTE, null);
-         db.execSQL("DELETE FROM "+Utilidades.TABLA_OFERTANTE+" WHERE "+Utilidades.CAMPO_cedula+"="+cedula);
+        db.execSQL("DELETE FROM "+Utilidades.TABLA_OFERTANTE+" WHERE "+Utilidades.CAMPO_cedula+"="+id);
+        db.close();
+        con.close();
+    }
+
+    public static void EditarOferBD(Context c,int id,String nombre,  int cedula, float deposito) {
+        Conexion con = new Conexion(c, "datos", null, 1);
+        SQLiteDatabase db = con.getWritableDatabase();
+        db.execSQL("UPDATE "+Utilidades.TABLA_OFERTANTE+" set "+Utilidades.CAMPO_nombre+"="+"\'"+nombre+"\'"
+        +","+Utilidades.CAMPO_cedula+"="+cedula+","+Utilidades.CAMPO_deposito+"="+deposito+" WHERE "+Utilidades.CAMPO_cedula+"="+id);
         db.close();
         con.close();
     }
