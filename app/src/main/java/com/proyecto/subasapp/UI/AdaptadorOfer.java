@@ -3,7 +3,6 @@ package com.proyecto.subasapp.UI;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,10 +22,11 @@ import java.util.ArrayList;
 
 public class AdaptadorOfer extends RecyclerView.Adapter<AdaptadorOfer.ViewHolderOfertantes> {
 
-    ArrayList<Ofertante> ofertante;
+      ArrayList<Ofertante> ofertante ;
 
-    public AdaptadorOfer(ArrayList<Ofertante> ofertante) {
-        this.ofertante = ofertante;
+
+    public AdaptadorOfer(ArrayList<Ofertante> ofer) {
+     this.ofertante=ofer;
     }
 
     @NonNull
@@ -91,7 +91,6 @@ public class AdaptadorOfer extends RecyclerView.Adapter<AdaptadorOfer.ViewHolder
                     });
             builder.create();
             builder.show();
-
         }
 
 

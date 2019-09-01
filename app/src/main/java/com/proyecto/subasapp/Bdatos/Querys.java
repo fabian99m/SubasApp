@@ -10,7 +10,7 @@ import android.util.Log;
 
 import com.proyecto.subasapp.Modelo.Ofertante;
 
-import static com.proyecto.subasapp.UI.MainActivity.subas;
+import java.util.ArrayList;
 
 
 public class Querys {
@@ -42,25 +42,28 @@ public class Querys {
         con.close();
     }
 
-    public static void CargarOferBD(Activity act) {
+    public static ArrayList<Ofertante> CargarOferBD(Activity act) {
+        ArrayList<Ofertante> ofer =new ArrayList<>();
         Conexion con = new Conexion(act, "datos", null, 1);
         SQLiteDatabase db = con.getWritableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM " + Utilidades.TABLA_OFERTANTE, null);
-        //Subasta subas = new Subasta(new ArrayList<Ofertante>());
+
         if (cursor.getCount() > 0) {
             while (cursor.moveToNext()) {
-                subas.ofer.add(new Ofertante(cursor.getString(0), cursor.getInt(1), cursor.getFloat(2)));
+                ofer.add(new Ofertante(cursor.getString(0), cursor.getInt(1), cursor.getFloat(2)));
             }
         }
         cursor.close();
         db.close();
         con.close();
+        return  ofer;
+
     }
 
     public static void ElimnarOferBD(Context c, int id) {
         Conexion con = new Conexion(c, "datos", null, 1);
         SQLiteDatabase db = con.getWritableDatabase();
-        db.execSQL("DELETE FROM " + Utilidades.TABLA_OFERTANTE + " WHERE " + Utilidades.CAMPO_cedula + "=" + id);
+        db.delete(Utilidades.TABLA_OFERTANTE,Utilidades.CAMPO_cedula+"="+id,null);
         db.close();
         con.close();
     }
@@ -68,15 +71,13 @@ public class Querys {
     public static void EditarOferBD(Context c, int id, String nombre, int cedula, float deposito) {
         Conexion con = new Conexion(c, "datos", null, 1);
         SQLiteDatabase db = con.getWritableDatabase();
-        db.execSQL("UPDATE " + Utilidades.TABLA_OFERTANTE + " set " + Utilidades.CAMPO_nombre + "=" + "\'" + nombre + "\'"
-                + "," + Utilidades.CAMPO_cedula + "=" + cedula + "," + Utilidades.CAMPO_deposito + "=" + deposito + " WHERE " + Utilidades.CAMPO_cedula + "=" + id);
+        ContentValues values = new ContentValues();
+        values.put(Utilidades.CAMPO_nombre,nombre);
+        values.put(Utilidades.CAMPO_cedula,cedula);
+        values.put(Utilidades.CAMPO_deposito,deposito);
+        db.update(Utilidades.TABLA_OFERTANTE,values,Utilidades.CAMPO_cedula+"="+id,null);
         db.close();
         con.close();
     }
-
-
-
-
-
 
 }

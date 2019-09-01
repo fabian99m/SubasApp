@@ -3655,6 +3655,7 @@
         <item>Editar ofertante</item>
         <item>Cancelar</item>
     </string-array><string name="cel">Celulares</string><string name="celu">Celular</string><string name="id">ID de celular</string><string name="marca">Marca</string><string name="modelo">Modelo</string><string-array name="gamas">
+        <item>Seleccione</item>
         <item>Baja</item>
         <item>Media</item>
         <item>Alta</item>

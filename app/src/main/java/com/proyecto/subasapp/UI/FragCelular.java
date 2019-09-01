@@ -1,7 +1,6 @@
 package com.proyecto.subasapp.UI;
 
 
-import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -16,10 +15,8 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.proyecto.subasapp.Bdatos.Querys;
-import com.proyecto.subasapp.Modelo.Celular;
 import com.proyecto.subasapp.R;
 
-import static com.proyecto.subasapp.UI.MainActivity.subas;
 
 public class FragCelular extends Fragment implements View.OnClickListener {
 
@@ -64,6 +61,8 @@ public class FragCelular extends Fragment implements View.OnClickListener {
             Toast.makeText(this.getActivity(), "Ingrese una marca!!", Toast.LENGTH_SHORT).show();
         } else if (modelo.getText().toString().isEmpty() || modelo.getText().toString().trim().equals("")) {
             Toast.makeText(this.getActivity(), "Ingrese modelo!!", Toast.LENGTH_SHORT).show();
+        } else if (sp.getSelectedItemPosition() == 0) {
+            Toast.makeText(this.getActivity(), "Seleccione una gama!!", Toast.LENGTH_SHORT).show();
         } else if (costo.getText().toString().isEmpty()) {
             Toast.makeText(this.getActivity(), "Ingrese el costo base!!", Toast.LENGTH_SHORT).show();
         } else {
@@ -73,17 +72,14 @@ public class FragCelular extends Fragment implements View.OnClickListener {
                 String modelo2 = modelo.getText().toString();
                 String gama2 = sp.getSelectedItem().toString();
                 float costo2 = Float.parseFloat(costo.getText().toString());
-                subas.cel.add(new Celular(id2, marca2, modelo2, gama2, costo2));
                 Querys.GuardarBD(getActivity(), id2, marca2, modelo2, gama2, costo2);
                 Toast.makeText(getActivity(), "Celular guardado con éxito!", Toast.LENGTH_SHORT).show();
-                id.setText("");
-                marca.setText("");
-                modelo.setText("");
-                sp.setSelection(0);
-                costo.setText("");
+
+                id.setText("");marca.setText("");modelo.setText("");sp.setSelection(0);costo.setText("");
             } catch (Exception e) {
-                e.printStackTrace();
                 Toast.makeText(getActivity(), "Error al guardar celular!", Toast.LENGTH_SHORT).show();
+                e.printStackTrace();
+
             }
         }
     }

@@ -36,6 +36,7 @@
     <string name="marca">Marca</string>
     <string name="modelo">Modelo</string>
     <string-array name="gamas">
+        <item>Seleccione</item>
         <item>Baja</item>
         <item>Media</item>
         <item>Alta</item>
