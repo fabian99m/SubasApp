@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
@@ -23,22 +24,21 @@
         android:hint="@string/ofertante"
         android:inputType="textPersonName"
         android:importantForAutofill="no"
-        android:selectAllOnFocus="true"
-        />
+        android:selectAllOnFocus="true" />
 
-      <EditText
-      android:id="@+id/ecedula"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="4dp"
-      android:layout_marginLeft="4dp"
-          android:selectAllOnFocus="true"
-      android:layout_marginRight="4dp"
-      android:layout_marginBottom="16dp"
-      android:hint="@string/cedula"
-          android:inputType="number"
-      tools:targetApi="jelly_bean"
-          android:importantForAutofill="no" />
+    <EditText
+        android:id="@+id/ecedula"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="4dp"
+        android:selectAllOnFocus="true"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="16dp"
+        android:hint="@string/cedula"
+        android:inputType="number"
+        tools:targetApi="jelly_bean"
+        android:importantForAutofill="no" />
 
     <EditText
         android:inputType="numberDecimal"
@@ -52,6 +52,5 @@
         android:hint="@string/deposito"
         tools:targetApi="jelly_bean"
         android:importantForAutofill="no"
-        android:selectAllOnFocus="true"
-        />
+        android:selectAllOnFocus="true" />
 </LinearLayout>

@@ -22,7 +22,7 @@
                 android:background="@drawable/side_nav_bar">
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/bt2"
                     android:layout_width="211dp"
                     android:layout_height="51dp"
                     android:layout_marginTop="20dp"
@@ -35,10 +35,10 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editText6" />
+                    app:layout_constraintTop_toBottomOf="@+id/edCosto" />
 
                 <EditText
-                    android:id="@+id/editText4"
+                    android:id="@+id/etModelo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
@@ -51,10 +51,10 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editText3" />
+                    app:layout_constraintTop_toBottomOf="@+id/etMarca" />
 
                 <EditText
-                    android:id="@+id/editText5"
+                    android:id="@+id/etID"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
@@ -63,14 +63,14 @@
                     android:hint="@string/id"
                     android:importantForAutofill="no"
                     android:inputType="number"
-                    app:layout_constraintBottom_toTopOf="@+id/editText3"
+                    app:layout_constraintBottom_toTopOf="@+id/etMarca"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
                 <EditText
-                    android:id="@+id/editText3"
+                    android:id="@+id/etMarca"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
@@ -79,14 +79,14 @@
                     android:hint="@string/marca"
                     android:importantForAutofill="no"
                     android:inputType="textPersonName"
-                    app:layout_constraintBottom_toTopOf="@+id/editText4"
+                    app:layout_constraintBottom_toTopOf="@+id/etModelo"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editText5" />
+                    app:layout_constraintTop_toBottomOf="@+id/etID" />
 
                 <EditText
-                    android:id="@+id/editText6"
+                    android:id="@+id/edCosto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
@@ -95,7 +95,7 @@
                     android:hint="@string/costo"
                     android:importantForAutofill="no"
                     android:inputType="number"
-                    app:layout_constraintBottom_toTopOf="@+id/button"
+                    app:layout_constraintBottom_toTopOf="@+id/bt2"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
@@ -108,7 +108,7 @@
 
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="20dp"
-                    app:layout_constraintBottom_toTopOf="@+id/editText6"
+                    app:layout_constraintBottom_toTopOf="@+id/edCosto"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
@@ -126,7 +126,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.498"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editText4" />
+                    app:layout_constraintTop_toBottomOf="@+id/etModelo" />
 
                 <TextView
                     android:id="@+id/textView12"
@@ -137,7 +137,7 @@
                     android:text="@string/cel"
                     android:textSize="22sp"
                     android:textStyle="bold"
-                    app:layout_constraintBottom_toTopOf="@+id/editText5"
+                    app:layout_constraintBottom_toTopOf="@+id/etID"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"

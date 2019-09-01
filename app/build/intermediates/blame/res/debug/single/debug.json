@@ -156,12 +156,12 @@
         "source": "C:\\Users\\Fabian Montes\\.gradle\\caches\\transforms-2\\files-2.1\\f6a183f8595ca34f3d5cc99d1f8bc322\\appcompat-1.0.2\\res\\drawable-xxhdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
-        "merged": "C:\\ProyectoAndroid\\SubasApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
-        "source": "C:\\Users\\Fabian Montes\\.gradle\\caches\\transforms-2\\files-2.1\\f6a183f8595ca34f3d5cc99d1f8bc322\\appcompat-1.0.2\\res\\drawable-xhdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
-    },
-    {
         "merged": "C:\\ProyectoAndroid\\SubasApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_cellphone.png.flat",
         "source": "C:\\ProyectoAndroid\\SubasApp\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\cellphone.png"
+    },
+    {
+        "merged": "C:\\ProyectoAndroid\\SubasApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
+        "source": "C:\\Users\\Fabian Montes\\.gradle\\caches\\transforms-2\\files-2.1\\f6a183f8595ca34f3d5cc99d1f8bc322\\appcompat-1.0.2\\res\\drawable-xhdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
     },
     {
         "merged": "C:\\ProyectoAndroid\\SubasApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_avd_show_password.xml.flat",
@@ -252,12 +252,12 @@
         "source": "C:\\Users\\Fabian Montes\\.gradle\\caches\\transforms-2\\files-2.1\\cb634fe4b4d1fdfcd5255e485d30a0c1\\material-1.0.0\\res\\drawable-xxhdpi-v4\\design_ic_visibility_off.png"
     },
     {
-        "merged": "C:\\ProyectoAndroid\\SubasApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_item_background_holo_dark.xml.flat",
-        "source": "C:\\Users\\Fabian Montes\\.gradle\\caches\\transforms-2\\files-2.1\\f6a183f8595ca34f3d5cc99d1f8bc322\\appcompat-1.0.2\\res\\drawable\\abc_item_background_holo_dark.xml"
-    },
-    {
         "merged": "C:\\ProyectoAndroid\\SubasApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_cellphone.png.flat",
         "source": "C:\\ProyectoAndroid\\SubasApp\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\cellphone.png"
+    },
+    {
+        "merged": "C:\\ProyectoAndroid\\SubasApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_item_background_holo_dark.xml.flat",
+        "source": "C:\\Users\\Fabian Montes\\.gradle\\caches\\transforms-2\\files-2.1\\f6a183f8595ca34f3d5cc99d1f8bc322\\appcompat-1.0.2\\res\\drawable\\abc_item_background_holo_dark.xml"
     },
     {
         "merged": "C:\\ProyectoAndroid\\SubasApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
@@ -1132,12 +1132,12 @@
         "source": "C:\\Users\\Fabian Montes\\.gradle\\caches\\transforms-2\\files-2.1\\f6a183f8595ca34f3d5cc99d1f8bc322\\appcompat-1.0.2\\res\\drawable-xxhdpi-v4\\abc_ic_star_black_36dp.png"
     },
     {
-        "merged": "C:\\ProyectoAndroid\\SubasApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\ProyectoAndroid\\SubasApp\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
-    },
-    {
         "merged": "C:\\ProyectoAndroid\\SubasApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_account_arrow_right.xml.flat",
         "source": "C:\\ProyectoAndroid\\SubasApp\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\account_arrow_right.xml"
+    },
+    {
+        "merged": "C:\\ProyectoAndroid\\SubasApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\ProyectoAndroid\\SubasApp\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
     },
     {
         "merged": "C:\\ProyectoAndroid\\SubasApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_big_media_custom.xml.flat",
@@ -1568,12 +1568,12 @@
         "source": "C:\\Users\\Fabian Montes\\.gradle\\caches\\transforms-2\\files-2.1\\f6a183f8595ca34f3d5cc99d1f8bc322\\appcompat-1.0.2\\res\\drawable\\abc_btn_check_material.xml"
     },
     {
-        "merged": "C:\\ProyectoAndroid\\SubasApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_normal.9.png.flat",
-        "source": "C:\\Users\\Fabian Montes\\.gradle\\caches\\transforms-2\\files-2.1\\72b2b92ec4ab73ff21fb9bc348de3b22\\core-1.0.1\\res\\drawable-hdpi-v4\\notification_bg_normal.9.png"
-    },
-    {
         "merged": "C:\\ProyectoAndroid\\SubasApp\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_frag_celulares.xml.flat",
         "source": "C:\\ProyectoAndroid\\SubasApp\\app\\src\\main\\res\\layout\\fragment_frag_celulares.xml"
+    },
+    {
+        "merged": "C:\\ProyectoAndroid\\SubasApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_normal.9.png.flat",
+        "source": "C:\\Users\\Fabian Montes\\.gradle\\caches\\transforms-2\\files-2.1\\72b2b92ec4ab73ff21fb9bc348de3b22\\core-1.0.1\\res\\drawable-hdpi-v4\\notification_bg_normal.9.png"
     },
     {
         "merged": "C:\\ProyectoAndroid\\SubasApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_menu_hardkey_panel_mtrl_mult.9.png.flat",

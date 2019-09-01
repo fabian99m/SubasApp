@@ -1106,7 +1106,7 @@ id beginning
 id blocking
 id bottom
 id bt1
-id button
+id bt2
 id buttonPanel
 id cancel_action
 id center
@@ -1136,11 +1136,8 @@ id direct
 id disableHome
 id drawer_layout
 id ecedula
+id edCosto
 id edeposito
-id editText3
-id editText4
-id editText5
-id editText6
 id edit_query
 id end
 id end_padder
@@ -1149,6 +1146,9 @@ id enterAlways
 id enterAlwaysCollapsed
 id etCedula
 id etDeposito
+id etID
+id etMarca
+id etModelo
 id etNombre
 id exitUntilCollapsed
 id expand_activities_button

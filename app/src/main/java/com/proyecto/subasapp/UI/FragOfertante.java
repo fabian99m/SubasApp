@@ -35,7 +35,7 @@ public class FragOfertante extends Fragment implements View.OnClickListener {
         deposito = v.findViewById(R.id.etDeposito);
 
         Button b = v.findViewById(R.id.bt1);
-        b.setOnClickListener(this);
+        b.setOnClickListener(this::onClick);
 
         return v;
     }
@@ -58,13 +58,13 @@ public class FragOfertante extends Fragment implements View.OnClickListener {
         } else {
             try {
                 subas.ofer.add(new Ofertante(nombre.getText().toString(), Integer.parseInt(cedula.getText().toString()), Float.parseFloat(deposito.getText().toString())));
-                Querys.GuardaOferBD(getActivity(), nombre, cedula, deposito);
+                Querys.GuardarBD(getActivity(), nombre.getText().toString(),Integer.parseInt(cedula.getText().toString()), Float.parseFloat(deposito.getText().toString()));
                 nombre.setText("");
                 cedula.setText("");
                 deposito.setText("");
                 Toast.makeText(getActivity(), "Ofertante guardado con éxito!", Toast.LENGTH_SHORT).show();
             } catch (Exception e) {
-             e.printStackTrace();
+                e.printStackTrace();
                 Toast.makeText(getActivity(), "Error al guardar ofertante!", Toast.LENGTH_SHORT).show();
             }
         }

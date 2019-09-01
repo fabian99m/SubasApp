@@ -1,7 +1,7 @@
 package com.proyecto.subasapp.Modelo;
 
 
-public class Ofertante  {
+public class Ofertante {
 
     private String nombre;
     private int cedula;

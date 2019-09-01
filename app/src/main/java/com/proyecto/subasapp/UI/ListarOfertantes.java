@@ -2,6 +2,7 @@ package com.proyecto.subasapp.UI;
 
 
 import android.os.Bundle;
+
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -26,7 +27,7 @@ public class ListarOfertantes extends Fragment {
         View v = inflater.inflate(R.layout.fragment_listar_ofertantes, container, false);
 
 
-        if(subas.ofer.size()>0) {
+        if (subas.ofer.size() > 0) {
             rp = v.findViewById(R.id.listaofer);
             rp.setLayoutManager(new LinearLayoutManager(this.getActivity()));
 
