@@ -22,7 +22,7 @@ import java.util.ArrayList;
 
 public class AdaptadorOfer extends RecyclerView.Adapter<AdaptadorOfer.ViewHolderOfertantes> {
 
-      ArrayList<Ofertante> ofertante ;
+     private ArrayList<Ofertante> ofertante;
 
 
     public AdaptadorOfer(ArrayList<Ofertante> ofer) {
@@ -70,23 +70,23 @@ public class AdaptadorOfer extends RecyclerView.Adapter<AdaptadorOfer.ViewHolder
         }
 
 
-        public void Opciones(final Context c) {
+        public void Opciones(final Context context) {
 
-            final AlertDialog.Builder builder = new AlertDialog.Builder(c);
+            final AlertDialog.Builder builder = new AlertDialog.Builder(context);
             builder.setTitle("Opciones" + " : " + ofertante.get(getAdapterPosition()).getNombre())
                     .setItems(R.array.opc, (dialog, which) -> {
                         if (which == 0) {
                             try {
-                                Querys.ElimnarOferBD(c, ofertante.get(getAdapterPosition()).getCedula());
+                                Querys.ElimnarOferBD(context, ofertante.get(getAdapterPosition()).getCedula());
                                 ofertante.remove(getAdapterPosition());
                                 notifyDataSetChanged();
-                                Toast.makeText(c, "Eliminado con éxito!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(context, "Eliminado con éxito!", Toast.LENGTH_SHORT).show();
                             } catch (Exception e) {
-                                Toast.makeText(c, "Error al eliminar ofertante!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(context, "Error al eliminar ofertante!", Toast.LENGTH_SHORT).show();
                                 e.printStackTrace();
                             }
                         } else if (which == 1) {
-                            Editar(c);
+                            Editar(context);
                         }
                     });
             builder.create();
@@ -94,15 +94,17 @@ public class AdaptadorOfer extends RecyclerView.Adapter<AdaptadorOfer.ViewHolder
         }
 
 
-        public void Editar(final Context c) {
-            final Activity ac = (Activity) c;
-            final AlertDialog.Builder builder = new AlertDialog.Builder(c);
-            final LayoutInflater inflater = ac.getLayoutInflater();
-            final View v = inflater.inflate(R.layout.editar_ofertante, null);
-            builder.setView(v);
-            final EditText nombre = v.findViewById(R.id.enombre);
-            final EditText cedula = v.findViewById(R.id.ecedula);
-            final EditText deposito = v.findViewById(R.id.edeposito);
+        public void Editar(final Context context) {
+            final Activity activity = (Activity) context;
+            final AlertDialog.Builder builder = new AlertDialog.Builder(context);
+            final LayoutInflater inflater = activity.getLayoutInflater();
+            final View view = inflater.inflate(R.layout.editar_ofertante, null);
+            builder.setView(view);
+
+            final EditText nombre = view.findViewById(R.id.enombre);
+            final EditText cedula = view.findViewById(R.id.ecedula);
+            final EditText deposito = view.findViewById(R.id.edeposito);
+
             nombre.setText(ofertante.get(getAdapterPosition()).getNombre());
             cedula.setText(String.valueOf(ofertante.get(getAdapterPosition()).getCedula()));
             deposito.setText(String.valueOf(ofertante.get(getAdapterPosition()).getDeposito()));
@@ -110,21 +112,21 @@ public class AdaptadorOfer extends RecyclerView.Adapter<AdaptadorOfer.ViewHolder
             builder.setPositiveButton("Guardar", (dialog, id) -> {
                 int i = getAdapterPosition();
                 if (nombre.getText().toString().isEmpty() || nombre.getText().toString().trim().equals("")) {
-                    Toast.makeText(ac, "Ingrese un nombre de ofertante!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(activity, "Ingrese un nombre de ofertante!!", Toast.LENGTH_SHORT).show();
                 } else if (cedula.getText().toString().isEmpty()) {
-                    Toast.makeText(ac, "Ingrese un número de cédula!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(activity, "Ingrese un número de cédula!!", Toast.LENGTH_SHORT).show();
                 } else if (deposito.getText().toString().isEmpty()) {
-                    Toast.makeText(ac, "Ingrese deposito!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(activity, "Ingrese deposito!!", Toast.LENGTH_SHORT).show();
                 } else {
                     try {
-                        Querys.EditarOferBD(c, ofertante.get(i).getCedula(), nombre.getText().toString(), Integer.parseInt(cedula.getText().toString()), Float.parseFloat(deposito.getText().toString()));
+                        Querys.EditarOferBD(context, ofertante.get(i).getCedula(), nombre.getText().toString(), Integer.parseInt(cedula.getText().toString()), Float.parseFloat(deposito.getText().toString()));
                         ofertante.get(i).setNombre(nombre.getText().toString());
                         ofertante.get(i).setCedula(Integer.parseInt(cedula.getText().toString()));
                         ofertante.get(i).setDeposito(Float.parseFloat(deposito.getText().toString()));
                         notifyDataSetChanged();
-                        Toast.makeText(c, "Modificado con éxito!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, "Modificado con éxito!", Toast.LENGTH_SHORT).show();
                     } catch (Exception e) {
-                        Toast.makeText(c, "Error al modificar ofertante!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, "Error al modificar ofertante!", Toast.LENGTH_SHORT).show();
                         e.printStackTrace();
                     }
                 }

@@ -18,7 +18,6 @@ public class Conexion extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(Utilidades.CREAR_TABLA_OFERTANTE);
         db.execSQL(Utilidades.CREAR_TABLA_CELULAR);
-
     }
 
     @Override
@@ -27,6 +26,5 @@ public class Conexion extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE if exists CELULAR");
         onCreate(db);
     }
-
 
 }

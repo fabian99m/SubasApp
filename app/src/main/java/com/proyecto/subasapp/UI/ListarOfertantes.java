@@ -17,19 +17,19 @@ import com.proyecto.subasapp.R;
 
 public class ListarOfertantes extends Fragment {
 
-    RecyclerView rp;
+    RecyclerView recyclerView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View v = inflater.inflate(R.layout.fragment_listar_ofertantes, container, false);
-        rp = v.findViewById(R.id.listaofer);
-        rp.setLayoutManager(new LinearLayoutManager(this.getActivity()));
+        View view = inflater.inflate(R.layout.fragment_listar_ofertantes, container, false);
+        recyclerView = view.findViewById(R.id.listaofer);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
         AdaptadorOfer adapter = new AdaptadorOfer(Querys.CargarOferBD(this.getActivity()));
-        rp.setAdapter(adapter);
+        recyclerView.setAdapter(adapter);
 
-        return v;
+        return view;
     }
 
 

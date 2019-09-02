@@ -17,36 +17,37 @@ public class Querys {
 
 
     public static void GuardarBD(Activity act, String nombre, int cedula, float deposito) {
-        Conexion con = new Conexion(act, "datos", null, 1);
-        SQLiteDatabase db = con.getWritableDatabase();
+        Conexion conexion = new Conexion(act, "datos", null, 1);
+        SQLiteDatabase database = conexion.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(Utilidades.CAMPO_nombre, nombre);
         values.put(Utilidades.CAMPO_cedula, cedula);
         values.put(Utilidades.CAMPO_deposito, deposito);
-        db.insert(Utilidades.TABLA_OFERTANTE, Utilidades.CAMPO_nombre, values);
-        db.close();
-        con.close();
+        database.insert(Utilidades.TABLA_OFERTANTE, Utilidades.CAMPO_nombre, values);
+        database.close();
+        conexion.close();
     }
-    public static void GuardarBD(Activity act, int id , String marca , String modelo , String gama , float costo) {
-        Log.d("test111",Utilidades.CREAR_TABLA_CELULAR);
-        Conexion con = new Conexion(act, "datos", null, 1);
-        SQLiteDatabase db = con.getWritableDatabase();
+
+    public static void GuardarBD(Activity act, int id, String marca, String modelo, String gama, float costo) {
+        Log.d("test111", Utilidades.CREAR_TABLA_CELULAR);
+        Conexion conexion = new Conexion(act, "datos", null, 1);
+        SQLiteDatabase database = conexion.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(Utilidades.CAMPO_id, id);
         values.put(Utilidades.CAMPO_marca, marca);
         values.put(Utilidades.CAMPO_modelo, modelo);
         values.put(Utilidades.CAMPO_gama, gama);
         values.put(Utilidades.CAMPO_costo, costo);
-        db.insert(Utilidades.TABLA_CELULARES ,Utilidades.CAMPO_id, values);
-        db.close();
-        con.close();
+        database.insert(Utilidades.TABLA_CELULARES, Utilidades.CAMPO_id, values);
+        database.close();
+        conexion.close();
     }
 
     public static ArrayList<Ofertante> CargarOferBD(Activity act) {
-        ArrayList<Ofertante> ofer =new ArrayList<>();
-        Conexion con = new Conexion(act, "datos", null, 1);
-        SQLiteDatabase db = con.getWritableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM " + Utilidades.TABLA_OFERTANTE, null);
+        ArrayList<Ofertante> ofer = new ArrayList<>();
+        Conexion conexion = new Conexion(act, "datos", null, 1);
+        SQLiteDatabase database = conexion.getWritableDatabase();
+        Cursor cursor = database.rawQuery("SELECT * FROM " + Utilidades.TABLA_OFERTANTE, null);
 
         if (cursor.getCount() > 0) {
             while (cursor.moveToNext()) {
@@ -54,30 +55,30 @@ public class Querys {
             }
         }
         cursor.close();
-        db.close();
-        con.close();
-        return  ofer;
+        database.close();
+        conexion.close();
+        return ofer;
 
     }
 
     public static void ElimnarOferBD(Context c, int id) {
-        Conexion con = new Conexion(c, "datos", null, 1);
-        SQLiteDatabase db = con.getWritableDatabase();
-        db.delete(Utilidades.TABLA_OFERTANTE,Utilidades.CAMPO_cedula+"="+id,null);
-        db.close();
-        con.close();
+        Conexion conexion = new Conexion(c, "datos", null, 1);
+        SQLiteDatabase database = conexion.getWritableDatabase();
+        database.delete(Utilidades.TABLA_OFERTANTE, Utilidades.CAMPO_cedula + "=" + id, null);
+        database.close();
+        conexion.close();
     }
 
     public static void EditarOferBD(Context c, int id, String nombre, int cedula, float deposito) {
-        Conexion con = new Conexion(c, "datos", null, 1);
-        SQLiteDatabase db = con.getWritableDatabase();
+        Conexion conexion = new Conexion(c, "datos", null, 1);
+        SQLiteDatabase database = conexion.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(Utilidades.CAMPO_nombre,nombre);
-        values.put(Utilidades.CAMPO_cedula,cedula);
-        values.put(Utilidades.CAMPO_deposito,deposito);
-        db.update(Utilidades.TABLA_OFERTANTE,values,Utilidades.CAMPO_cedula+"="+id,null);
-        db.close();
-        con.close();
+        values.put(Utilidades.CAMPO_nombre, nombre);
+        values.put(Utilidades.CAMPO_cedula, cedula);
+        values.put(Utilidades.CAMPO_deposito, deposito);
+        database.update(Utilidades.TABLA_OFERTANTE, values, Utilidades.CAMPO_cedula + "=" + id, null);
+        database.close();
+        conexion.close();
     }
 
 }

@@ -31,15 +31,15 @@ public class FragOfertante extends Fragment implements View.OnClickListener {
         cedula = v.findViewById(R.id.etCedula);
         deposito = v.findViewById(R.id.etDeposito);
 
-        Button b = v.findViewById(R.id.bt1);
-        b.setOnClickListener(this::onClick);
+        Button button = v.findViewById(R.id.bt1);
+        button.setOnClickListener(this::onClick);
 
         return v;
     }
 
     @Override
-    public void onClick(View v) {
-        if (v.getId() == R.id.bt1) {
+    public void onClick(View view) {
+        if (view.getId() == R.id.bt1) {
             GuardarOfertante();
         }
     }
