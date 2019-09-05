@@ -14,7 +14,7 @@
         android:src="@drawable/icon" />
 
     <EditText
-        android:id="@+id/enombre"
+        android:id="@+id/eid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="4dp"
@@ -27,7 +27,7 @@
         android:selectAllOnFocus="true" />
 
     <EditText
-        android:id="@+id/ecedula"
+        android:id="@+id/emarca"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -42,7 +42,7 @@
 
     <EditText
         android:inputType="numberDecimal"
-        android:id="@+id/edeposito"
+        android:id="@+id/emodelo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"

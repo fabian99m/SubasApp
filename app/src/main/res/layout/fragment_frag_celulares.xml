@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".UI.FragCelular">
+    tools:context=".UI.Fragmentos.FragCelular">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -23,8 +23,8 @@
 
                 <Button
                     android:id="@+id/bt2"
-                    android:layout_width="211dp"
-                    android:layout_height="51dp"
+                    android:layout_width="203dp"
+                    android:layout_height="37dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="92dp"
                     android:background="#3F51B5"
@@ -51,7 +51,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/etMarca" />
+                    app:layout_constraintTop_toBottomOf="@+id/etMarca"
+                    android:theme="@style/EditTextTheme"/>
 
                 <EditText
                     android:id="@+id/etID"
@@ -67,7 +68,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView12" />
+                    app:layout_constraintTop_toBottomOf="@+id/textView12"
+                    android:theme="@style/EditTextTheme"/>
 
                 <EditText
                     android:id="@+id/etMarca"
@@ -83,7 +85,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/etID" />
+                    app:layout_constraintTop_toBottomOf="@+id/etID"
+                    android:theme="@style/EditTextTheme"/>
 
                 <EditText
                     android:id="@+id/edCosto"
@@ -99,13 +102,13 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/sp1" />
+                    app:layout_constraintTop_toBottomOf="@+id/sp1"
+                    android:theme="@style/EditTextTheme"/>
 
                 <Spinner
                     android:id="@+id/sp1"
                     android:layout_width="148dp"
                     android:layout_height="47dp"
-
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="20dp"
                     app:layout_constraintBottom_toTopOf="@+id/edCosto"
@@ -126,7 +129,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.498"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/etModelo" />
+                    app:layout_constraintTop_toBottomOf="@+id/etModelo"
+                    />
 
                 <TextView
                     android:id="@+id/textView12"

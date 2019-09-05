@@ -31,6 +31,7 @@ animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
 array gamas
 array opc
+array opc2
 attr action
 attr actionBarDivider
 attr actionBarItemBackground
@@ -649,6 +650,7 @@ color dim_foreground_disabled_material_dark
 color dim_foreground_disabled_material_light
 color dim_foreground_material_dark
 color dim_foreground_material_light
+color editex
 color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
@@ -1103,6 +1105,7 @@ id async
 id auto
 id barrier
 id beginning
+id blankFragment
 id blocking
 id bottom
 id bt1
@@ -1122,6 +1125,7 @@ id container
 id content
 id contentPanel
 id coordinator
+id costo
 id custom
 id customPanel
 id decor_content_parent
@@ -1135,13 +1139,14 @@ id dimensions
 id direct
 id disableHome
 id drawer_layout
-id ecedula
+id ecosto
 id edCosto
-id edeposito
 id edit_query
+id eid
+id emarca
+id emodelo
 id end
 id end_padder
-id enombre
 id enterAlways
 id enterAlwaysCollapsed
 id etCedula
@@ -1161,6 +1166,7 @@ id fixed
 id forever
 id fragCelular
 id fragOfertante
+id gama
 id ghost_view
 id gone
 id group_divider
@@ -1169,12 +1175,14 @@ id home
 id homeAsUp
 id icon
 id icon_group
+id id
 id idCedula
 id idDeposito
 id idNombre
 id ifRoom
 id image
 id imageView
+id imageView2
 id info
 id invisible
 id italic
@@ -1187,13 +1195,17 @@ id line3
 id listMode
 id list_item
 id listaofer
+id listarCelulares
 id listarOfertantes
+id listarcel
+id marca
 id masked
 id media_actions
 id message
 id middle
 id mini
 id mobile_navigation
+id modelo
 id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply
@@ -1253,6 +1265,7 @@ id snap
 id snapMargins
 id sp1
 id spacer
+id spgama
 id split_action_bar
 id spread
 id spread_inside
@@ -1367,10 +1380,14 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
+layout editar_celular
 layout editar_ofertante
+layout fragment_blank
 layout fragment_frag_celulares
 layout fragment_frag_ofertante
+layout fragment_listar_celulares
 layout fragment_listar_ofertantes
+layout listar_celulares
 layout listar_ofertantes
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
@@ -1457,6 +1474,7 @@ string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string hola
 string id
+string list_celu
 string list_ofer
 string listar
 string marca
@@ -1476,6 +1494,7 @@ string nav_header_title
 string navigation_drawer_close
 string navigation_drawer_open
 string nombre
+string ofer
 string ofertante
 string password_toggle_content_description
 string path_password_eye
@@ -1689,6 +1708,7 @@ style Base_Widget_MaterialComponents_TextInputLayout
 style CardView
 style CardView_Dark
 style CardView_Light
+style EditTextTheme
 style Platform_AppCompat
 style Platform_AppCompat_Light
 style Platform_MaterialComponents
