@@ -1,8 +1,7 @@
-package com.proyecto.subasapp.UI;
+package com.proyecto.subasapp.Vista;
 
-import android.net.Uri;
+
 import android.os.Bundle;
-
 
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -10,7 +9,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import com.google.android.material.navigation.NavigationView;
 import com.proyecto.subasapp.R;
-import com.proyecto.subasapp.UI.Fragmentos.BlankFragment;
+
 
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,7 +19,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 
 
-public class MainActivity extends AppCompatActivity implements BlankFragment.OnFragmentInteractionListener {
+public class MainActivity extends AppCompatActivity  {
 
     private AppBarConfiguration mAppBarConfiguration;
 
@@ -53,8 +52,5 @@ public class MainActivity extends AppCompatActivity implements BlankFragment.OnF
         return NavigationUI.navigateUp(navController, mAppBarConfiguration) || super.onSupportNavigateUp();
     }
 
-    @Override
-    public void onFragmentInteraction(Uri uri) {
 
-    }
 }

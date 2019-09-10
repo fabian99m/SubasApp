@@ -1039,6 +1039,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable devices
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_menu_camera
@@ -1105,7 +1106,6 @@ id async
 id auto
 id barrier
 id beginning
-id blankFragment
 id blocking
 id bottom
 id bt1
@@ -1382,7 +1382,6 @@ layout design_navigation_menu_item
 layout design_text_input_password_icon
 layout editar_celular
 layout editar_ofertante
-layout fragment_blank
 layout fragment_frag_celulares
 layout fragment_frag_ofertante
 layout fragment_listar_celulares
@@ -1414,6 +1413,7 @@ layout support_simple_spinner_dropdown_item
 menu activity_main_drawer
 menu main
 mipmap ic_launcher
+mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 navigation mobile_navigation
 string abc_action_bar_home_description

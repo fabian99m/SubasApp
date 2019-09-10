@@ -8,27 +8,22 @@
 
     <fragment
         android:id="@+id/fragOfertante"
-        android:name="com.proyecto.subasapp.UI.Fragmentos.FragOfertante"
+        android:name="com.proyecto.subasapp.Vista.Fragmentos.FragOfertante"
         android:label="@string/ofer"
         tools:layout="@layout/fragment_frag_ofertante" />
     <fragment
         android:id="@+id/listarOfertantes"
-        android:name="com.proyecto.subasapp.UI.Listas.ListarOfertantes"
+        android:name="com.proyecto.subasapp.Vista.Listas.ListarOfertantes"
         android:label="@string/list_ofer"
         tools:layout="@layout/fragment_listar_ofertantes" />
     <fragment
         android:id="@+id/fragCelular"
-        android:name="com.proyecto.subasapp.UI.Fragmentos.FragCelular"
+        android:name="com.proyecto.subasapp.Vista.Fragmentos.FragCelular"
         android:label="@string/celu"
         tools:layout="@layout/fragment_frag_celulares" />
     <fragment
         android:id="@+id/listarCelulares"
-        android:name="com.proyecto.subasapp.UI.Listas.ListarCelulares"
+        android:name="com.proyecto.subasapp.Vista.Listas.ListarCelulares"
         android:label="@string/list_celu"
         tools:layout="@layout/fragment_listar_celulares" />
-    <fragment
-        android:id="@+id/blankFragment"
-        android:name="com.proyecto.subasapp.UI.Fragmentos.BlankFragment"
-        android:label="fragment_blank"
-        tools:layout="@layout/fragment_blank" />
 </navigation>

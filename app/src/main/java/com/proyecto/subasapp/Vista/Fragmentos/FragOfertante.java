@@ -1,4 +1,4 @@
-package com.proyecto.subasapp.UI.Fragmentos;
+package com.proyecto.subasapp.Vista.Fragmentos;
 
 
 import android.os.Bundle;

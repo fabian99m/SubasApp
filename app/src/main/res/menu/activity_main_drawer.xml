@@ -24,11 +24,7 @@
                 android:title="@string/list_ofer" />
             <item
                 android:id="@+id/listarCelulares"
-                android:icon="@drawable/users"
-                android:title="@string/list_celu" />
-            <item
-                android:id="@+id/blankFragment"
-                android:icon="@drawable/users"
+                android:icon="@drawable/devices"
                 android:title="@string/list_celu" />
         </menu>
     </item>

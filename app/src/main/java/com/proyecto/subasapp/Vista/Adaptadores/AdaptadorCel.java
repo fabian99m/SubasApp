@@ -1,4 +1,4 @@
-package com.proyecto.subasapp.UI.Adaptadores;
+package com.proyecto.subasapp.Vista.Adaptadores;
 
 import android.app.Activity;
 import android.app.AlertDialog;
