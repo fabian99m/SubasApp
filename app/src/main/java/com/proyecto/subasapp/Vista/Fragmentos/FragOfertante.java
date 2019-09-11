@@ -5,19 +5,24 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 import com.proyecto.subasapp.Bdatos.Consulta;
 import com.proyecto.subasapp.R;
 
 
 
-public class FragOfertante extends Fragment implements View.OnClickListener {
+public class FragOfertante extends Fragment implements View.OnClickListener{
 
 
     private EditText nombre, cedula, deposito;
@@ -35,7 +40,37 @@ public class FragOfertante extends Fragment implements View.OnClickListener {
         Button button = view.findViewById(R.id.bt1);
         button.setOnClickListener(this::onClick);
 
+        deposito.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+            @Override
+            public void afterTextChanged(Editable editable) {EntradaText(this,editable);}
+         });
+
         return view;
+    }
+
+
+    public void EntradaText(TextWatcher tw , Editable editable){
+        deposito.removeTextChangedListener(tw);
+        try {
+            String originalString = editable.toString();
+            Long longval;
+            if (originalString.contains(",")) {
+                originalString = originalString.replaceAll(",", "");
+            }
+            longval = Long.parseLong(originalString);
+            DecimalFormat formatter = (DecimalFormat) NumberFormat.getInstance(Locale.US);
+            formatter.applyPattern("#,###,###,###");
+            String formattedString = formatter.format(longval);
+            deposito.setText(formattedString);
+            deposito.setSelection(deposito.getText().length());
+        } catch (NumberFormatException nfe) {
+            nfe.printStackTrace();
+        }
+        deposito.addTextChangedListener(tw);
     }
 
     @Override
@@ -58,7 +93,7 @@ public class FragOfertante extends Fragment implements View.OnClickListener {
             deposito.requestFocus();
         } else {
             try {
-                Consulta.GuardarBD(getActivity(), nombre.getText().toString(),Integer.parseInt(cedula.getText().toString()), Float.parseFloat(deposito.getText().toString()));
+                Consulta.GuardarBD(getActivity(), nombre.getText().toString(),Long.parseLong(cedula.getText().toString()), Integer.parseInt(deposito.getText().toString().replaceAll(",","")));
                 nombre.setText("");cedula.setText("");deposito.setText("");
                 Toast.makeText(getActivity(), "Ofertante guardado con éxito!", Toast.LENGTH_SHORT).show();
             } catch (Exception e) {

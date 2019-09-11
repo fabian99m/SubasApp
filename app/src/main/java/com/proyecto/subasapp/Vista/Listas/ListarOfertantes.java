@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.google.android.material.snackbar.Snackbar;
 import com.proyecto.subasapp.Bdatos.Consulta;
 import com.proyecto.subasapp.R;
 import com.proyecto.subasapp.Vista.Adaptadores.AdaptadorOfer;
@@ -23,11 +25,17 @@ public class ListarOfertantes extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_listar_ofertantes, container, false);
-        recyclerView = view.findViewById(R.id.listaofer);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
-        AdaptadorOfer adapter = new AdaptadorOfer(Consulta.CargarOfertanteBD(this.getActivity()));
-        recyclerView.setAdapter(adapter);
+
+        if(Consulta.CargarOfertanteBD(this.getActivity()).size()>0) {
+            recyclerView = view.findViewById(R.id.listaofer);
+            recyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
+            AdaptadorOfer adapter = new AdaptadorOfer(Consulta.CargarOfertanteBD(this.getActivity()));
+            recyclerView.setAdapter(adapter);
+        } else {
+            Snackbar.make(view, "Ingrese al menos un ofertante!", Snackbar.LENGTH_LONG)
+                    .setActionTextColor(getResources().getColor(R.color.snackbar_action))
+                    .setAction("Aceptar", view1 -> {}).show();
+        }
         return view;
     }
-
 }

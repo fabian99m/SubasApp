@@ -119,10 +119,10 @@ public class AdaptadorOfer extends RecyclerView.Adapter<AdaptadorOfer.ViewHolder
                     Editar(context);
                 } else {
                     try {
-                        Consulta.ModificarBD(context, ofertante.get(i).getCedula(), nombre.getText().toString(), Integer.parseInt(cedula.getText().toString()), Float.parseFloat(deposito.getText().toString()));
+                        Consulta.ModificarBD(context, ofertante.get(i).getCedula(), nombre.getText().toString(), Long.parseLong(cedula.getText().toString()),Integer.parseInt(deposito.getText().toString()));
                         ofertante.get(i).setNombre(nombre.getText().toString());
-                        ofertante.get(i).setCedula(Integer.parseInt(cedula.getText().toString()));
-                        ofertante.get(i).setDeposito(Float.parseFloat(deposito.getText().toString()));
+                        ofertante.get(i).setCedula(Long.parseLong(cedula.getText().toString()));
+                        ofertante.get(i).setDeposito(Integer.parseInt(deposito.getText().toString()));
                         notifyDataSetChanged();
                         Toast.makeText(context, "Modificado con éxito!", Toast.LENGTH_SHORT).show();
                     } catch (Exception e) {

@@ -4,15 +4,15 @@ package com.proyecto.subasapp.Modelo;
 public class Ofertante {
 
     private String nombre;
-    private int cedula;
-    private float deposito;
+    private Long cedula;
+    private int deposito;
 
 
     public Ofertante() {
 
     }
 
-    public Ofertante(String nombre, int cedula, float deposito) {
+    public Ofertante(String nombre, Long cedula, int deposito) {
         this.nombre = nombre;
         this.cedula = cedula;
         this.deposito = deposito;
@@ -26,19 +26,19 @@ public class Ofertante {
         this.nombre = nombre;
     }
 
-    public int getCedula() {
+    public Long getCedula() {
         return cedula;
     }
 
-    public void setCedula(int cedula) {
+    public void setCedula(Long cedula) {
         this.cedula = cedula;
     }
 
-    public float getDeposito() {
+    public int getDeposito() {
         return deposito;
     }
 
-    public void setDeposito(float deposito) {
+    public void setDeposito(int deposito) {
         this.deposito = deposito;
     }
 }

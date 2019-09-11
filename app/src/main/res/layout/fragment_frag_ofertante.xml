@@ -100,7 +100,7 @@
             android:ems="10"
             android:hint="@string/tp3"
             android:importantForAutofill="no"
-            android:inputType="numberDecimal"
+            android:inputType="number"
             android:textColorHighlight="#13534D"
             android:textCursorDrawable="@color/colorPrimary"
             app:layout_constraintBottom_toTopOf="@+id/bt1"

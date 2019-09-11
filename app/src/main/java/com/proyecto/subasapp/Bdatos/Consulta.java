@@ -39,7 +39,7 @@ public interface Consulta {
      String ELIMINAR_TABLA_CELULAR = "DROP TABLE if exists "+TABLA_CELULAR;
 
 
-      static void GuardarBD(Activity act, String nombre, int cedula, float deposito) {
+      static void GuardarBD(Activity act, String nombre, Long cedula, float deposito) {
           Conexion conexion = new Conexion(act, "datos", null, 1);
           SQLiteDatabase database = conexion.getWritableDatabase();
           ContentValues values = new ContentValues();
@@ -71,7 +71,7 @@ public interface Consulta {
           Cursor cursor = database.rawQuery("SELECT * FROM " + Consulta.TABLA_OFERTANTE, null);
           if (cursor.getCount() > 0) {
                while (cursor.moveToNext()) {
-                    ofertantes.add(new Ofertante(cursor.getString(0), cursor.getInt(1), cursor.getFloat(2)));
+                    ofertantes.add(new Ofertante(cursor.getString(0), cursor.getLong(1), cursor.getInt(2)));
                }
           }
           cursor.close();
@@ -98,7 +98,7 @@ public interface Consulta {
         return celulares;
     }
 
-     static void ElimnarBD(Context c, int id,String tabla,String campo) {
+     static void ElimnarBD(Context c, Long id,String tabla,String campo) {
           Conexion conexion = new Conexion(c, "datos", null, 1);
           SQLiteDatabase database = conexion.getWritableDatabase();
           database.delete(tabla, campo + "=" + id, null);
@@ -106,9 +106,16 @@ public interface Consulta {
           conexion.close();
      }
 
+    static void ElimnarBD(Context c, int id,String tabla,String campo) {
+        Conexion conexion = new Conexion(c, "datos", null, 1);
+        SQLiteDatabase database = conexion.getWritableDatabase();
+        database.delete(tabla, campo + "=" + id, null);
+        database.close();
+        conexion.close();
+    }
 
 
-      static void ModificarBD(Context context, int id, String nombre, int cedula, float deposito) {
+    static void ModificarBD(Context context, Long  id, String nombre, Long cedula, float deposito) {
           Conexion conexion = new Conexion(context, "datos", null, 1);
           SQLiteDatabase database = conexion.getWritableDatabase();
           ContentValues values = new ContentValues();
@@ -120,7 +127,7 @@ public interface Consulta {
           conexion.close();
      }
 
-    static void ModificarBD(Context context, int oldID , int id , String marca, String modelo, String gama, float costo) {
+    static void ModificarBD(Context context,int oldID , int id , String marca, String modelo, String gama, float costo) {
         Conexion conexion = new Conexion(context, "datos", null, 1);
         SQLiteDatabase database = conexion.getWritableDatabase();
         ContentValues values = new ContentValues();
