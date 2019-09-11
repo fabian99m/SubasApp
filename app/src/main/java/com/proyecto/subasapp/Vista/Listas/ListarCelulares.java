@@ -1,7 +1,10 @@
 package com.proyecto.subasapp.Vista.Listas;
 
 import android.os.Bundle;
+
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,6 +14,10 @@ import com.google.android.material.snackbar.Snackbar;
 import com.proyecto.subasapp.Bdatos.Consulta;
 import com.proyecto.subasapp.R;
 import com.proyecto.subasapp.Vista.Adaptadores.AdaptadorCel;
+import com.proyecto.subasapp.Vista.Fragmentos.FragCelular;
+import com.proyecto.subasapp.Vista.Fragmentos.FragOfertante;
+
+import java.util.Objects;
 
 
 public class ListarCelulares extends Fragment {
@@ -30,7 +37,14 @@ public class ListarCelulares extends Fragment {
         } else{
             Snackbar.make(view, "Ingrese al menos un celular!", Snackbar.LENGTH_LONG)
                     .setActionTextColor(getResources().getColor(R.color.snackbar_action))
-                    .setAction("Aceptar", view1 -> {}).show();
+                    .setAction("Ir!", view1 -> {
+                        FragCelular fragCelular = new FragCelular();
+                        FragmentTransaction transaction = Objects.requireNonNull(getActivity()).getSupportFragmentManager().beginTransaction();
+                        transaction.addToBackStack(null);
+                        transaction.replace(R.id.test2, fragCelular).commit();
+                        Toolbar toolbar = getActivity().findViewById(R.id.toolbar);
+                        toolbar.setTitle("Celular");
+                    }).show();
         }
         return  view;
     }

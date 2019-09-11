@@ -24,6 +24,13 @@ import com.proyecto.subasapp.R;
 
 public class FragOfertante extends Fragment implements View.OnClickListener{
 
+    public static final String ARG_PARAM1 = "param1";
+    public static final String ARG_PARAM2 = "param2";
+
+    // TODO: Rename and change types of parameters
+    public String mParam1;
+    public String mParam2;
+
 
     private EditText nombre, cedula, deposito;
 
@@ -50,6 +57,24 @@ public class FragOfertante extends Fragment implements View.OnClickListener{
          });
 
         return view;
+    }
+
+    public static FragOfertante newInstance(String param1, String param2) {
+        FragOfertante fragment = new FragOfertante();
+        Bundle args = new Bundle();
+        args.putString(ARG_PARAM1, param1);
+        args.putString(ARG_PARAM2, param2);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);
+        }
     }
 
 
