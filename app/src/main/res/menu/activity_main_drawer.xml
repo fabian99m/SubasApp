@@ -16,6 +16,8 @@
 
     </group>
 
+    <group android:checkableBehavior="single">
+
     <item android:title="@string/listar">
         <menu>
             <item
@@ -26,7 +28,13 @@
                 android:id="@+id/listarCelulares"
                 android:icon="@drawable/devices"
                 android:title="@string/list_celu" />
+
+            <item
+                android:id="@+id/fragOferta"
+                android:icon="@drawable/devices"
+                android:title="@string/oferta" />
+
         </menu>
     </item>
-
+    </group>
 </menu>

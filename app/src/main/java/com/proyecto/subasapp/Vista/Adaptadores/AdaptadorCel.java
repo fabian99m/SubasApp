@@ -56,7 +56,7 @@ public class AdaptadorCel extends RecyclerView.Adapter<AdaptadorCel.ViewHolderCe
 
         public ViewHolderCelulares(@NonNull View itemView) {
             super(itemView);
-            id = itemView.findViewById(R.id.id);
+            id = itemView.findViewById(R.id.tv11);
             marca = itemView.findViewById(R.id.marca);
             modelo = itemView.findViewById(R.id.modelo);
             gama = itemView.findViewById(R.id.gama);

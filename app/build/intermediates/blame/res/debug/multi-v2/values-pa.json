@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\ProyectoAndroid\\SubasApp\\SubasApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pa\\values-pa.xml",
+            "outputFile": "C:\\ProyectoAndroid\\SubasApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pa\\values-pa.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Fabian Montes\\.gradle\\caches\\transforms-2\\files-2.1\\6a85369e69d078d6618f590b57160a2d\\jetified-navigation-ui-2.0.0\\res\\values-pa\\values-pa.xml",

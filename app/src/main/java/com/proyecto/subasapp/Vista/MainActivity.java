@@ -27,14 +27,13 @@ public class MainActivity extends AppCompatActivity  {
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
-        mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.fragOfertante, R.id.listarOfertantes, R.id.fragCelular,R.id.listarCelulares)
+        mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.fragOfertante, R.id.listarOfertantes, R.id.fragCelular,
+                R.id.listarCelulares,R.id.fragOferta)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
-
-
     }
 
 

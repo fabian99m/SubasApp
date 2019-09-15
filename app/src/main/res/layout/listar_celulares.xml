@@ -33,7 +33,7 @@
                 app:srcCompat="@drawable/icon" />
 
             <TextView
-                android:id="@+id/id"
+                android:id="@+id/tv11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -59,7 +59,7 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toEndOf="@+id/id"
+                app:layout_constraintStart_toEndOf="@+id/tv11"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView

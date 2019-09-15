@@ -12,7 +12,7 @@
         <activity
             android:name=".Vista.MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar.Bridge">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

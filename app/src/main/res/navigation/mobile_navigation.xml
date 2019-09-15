@@ -26,4 +26,9 @@
         android:name="com.proyecto.subasapp.Vista.Listas.ListarCelulares"
         android:label="@string/list_celu"
         tools:layout="@layout/fragment_listar_celulares" />
+    <fragment
+        android:id="@+id/fragOferta"
+        android:name="com.proyecto.subasapp.Vista.Fragmentos.FragOferta"
+        android:label="@string/oferta"
+        tools:layout="@layout/fragment_frag_oferta" />
 </navigation>

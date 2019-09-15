@@ -17,19 +17,13 @@ import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.Locale;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.proyecto.subasapp.Bdatos.Consulta;
 import com.proyecto.subasapp.R;
 
 
 
 public class FragOfertante extends Fragment implements View.OnClickListener{
-
-    public static final String ARG_PARAM1 = "param1";
-    public static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    public String mParam1;
-    public String mParam2;
 
 
     private EditText nombre, cedula, deposito;
@@ -57,24 +51,6 @@ public class FragOfertante extends Fragment implements View.OnClickListener{
          });
 
         return view;
-    }
-
-    public static FragOfertante newInstance(String param1, String param2) {
-        FragOfertante fragment = new FragOfertante();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
 
@@ -108,19 +84,26 @@ public class FragOfertante extends Fragment implements View.OnClickListener{
     public void GuardarOfertante() {
 
         if (nombre.getText().toString().isEmpty() || nombre.getText().toString().trim().equals("")) {
-            Toast.makeText(getActivity(), "Ingrese un nombre de ofertante!!", Toast.LENGTH_SHORT).show();
+            nombre.setError("Ingrese un nombre válido!");
             nombre.requestFocus();
+            if(cedula.getText().toString().isEmpty()) { cedula.setError("Ingrese una cédula válida!");}
+            if(deposito.getText().toString().isEmpty()){ deposito.setError("Ingrese un deposito válido!");}
         } else if (cedula.getText().toString().isEmpty()) {
-            Toast.makeText(getActivity(), "Ingrese un número de cédula!!", Toast.LENGTH_SHORT).show();
+            cedula.setError("Ingrese una cédula válida!");
             cedula.requestFocus();
+            if(nombre.getText().toString().isEmpty()) { nombre.setError("Ingrese una cédula válida!");}
+            if(deposito.getText().toString().isEmpty()){ deposito.setError("Ingrese un deposito válido!");}
         } else if (deposito.getText().toString().isEmpty()) {
-            Toast.makeText(getActivity(), "Ingrese deposito!!", Toast.LENGTH_SHORT).show();
+            deposito.setError("Ingrese un deposito válido!");
             deposito.requestFocus();
+            if(cedula.getText().toString().isEmpty()) { cedula.setError("Ingrese una cédula válida!");}
+            if(nombre.getText().toString().isEmpty()){ nombre.setError("Ingrese un deposito válido!");}
         } else {
             try {
                 Consulta.GuardarBD(getActivity(), nombre.getText().toString(),Long.parseLong(cedula.getText().toString()), Integer.parseInt(deposito.getText().toString().replaceAll(",","")));
                 nombre.setText("");cedula.setText("");deposito.setText("");
-                Toast.makeText(getActivity(), "Ofertante guardado con éxito!", Toast.LENGTH_SHORT).show();
+                nombre.clearFocus();cedula.clearFocus();deposito.clearFocus();
+                Snackbar.make(this.getView(), "Ofertante guardado con éxito!", Snackbar.LENGTH_LONG).show();
             } catch (Exception e) {
                 Toast.makeText(getActivity(), "Error al guardar ofertante!", Toast.LENGTH_SHORT).show();
                 e.printStackTrace();

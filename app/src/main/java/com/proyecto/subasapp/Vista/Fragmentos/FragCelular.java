@@ -15,6 +15,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.google.android.material.snackbar.Snackbar;
 import com.proyecto.subasapp.Bdatos.Consulta;
 import com.proyecto.subasapp.R;
 import java.text.DecimalFormat;
@@ -109,11 +111,12 @@ public class FragCelular extends Fragment implements View.OnClickListener {
                 String modelo2 = modelo.getText().toString();
                 String gama2 = gama.getSelectedItem().toString();
                 float costo2 = Float.parseFloat(costo.getText().toString().replaceAll(",",""));
-
                 Consulta.GuardarBD(getActivity(), id2, marca2, modelo2, gama2, costo2);
-                Toast.makeText(getActivity(), "Celular guardado con éxito!", Toast.LENGTH_SHORT).show();
+                Snackbar.make(this.getView(), "Celular guardado con éxito!", Snackbar.LENGTH_LONG).show();
                 id.setText("");marca.setText("");modelo.setText("");
                 gama.setSelection(0);costo.setText("");
+                id.clearFocus();marca.clearFocus();modelo.clearFocus();
+                costo.clearFocus();
             } catch (Exception e) {
                 Toast.makeText(getActivity(), "Error al guardar celular!", Toast.LENGTH_SHORT).show();
                 e.printStackTrace();

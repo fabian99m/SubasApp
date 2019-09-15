@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#00FFFFFF"
     tools:context=".Vista.Fragmentos.FragCelular">
 
     <androidx.core.widget.NestedScrollView
@@ -47,12 +48,12 @@
                     android:hint="@string/modelo"
                     android:importantForAutofill="no"
                     android:inputType="textPersonName"
+                    android:theme="@style/EditTextTheme"
                     app:layout_constraintBottom_toTopOf="@+id/textView"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/etMarca"
-                    android:theme="@style/EditTextTheme"/>
+                    app:layout_constraintTop_toBottomOf="@+id/etMarca" />
 
                 <EditText
                     android:id="@+id/etID"
@@ -64,12 +65,12 @@
                     android:hint="@string/id"
                     android:importantForAutofill="no"
                     android:inputType="number"
+                    android:theme="@style/EditTextTheme"
                     app:layout_constraintBottom_toTopOf="@+id/etMarca"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView12"
-                    android:theme="@style/EditTextTheme"/>
+                    app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
                 <EditText
                     android:id="@+id/etMarca"
@@ -81,12 +82,12 @@
                     android:hint="@string/marca"
                     android:importantForAutofill="no"
                     android:inputType="textPersonName"
+                    android:theme="@style/EditTextTheme"
                     app:layout_constraintBottom_toTopOf="@+id/etModelo"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/etID"
-                    android:theme="@style/EditTextTheme"/>
+                    app:layout_constraintTop_toBottomOf="@+id/etID" />
 
                 <EditText
                     android:id="@+id/edCosto"
@@ -98,12 +99,12 @@
                     android:hint="@string/costo"
                     android:importantForAutofill="no"
                     android:inputType="number"
+                    android:theme="@style/EditTextTheme"
                     app:layout_constraintBottom_toTopOf="@+id/bt2"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/sp1"
-                    android:theme="@style/EditTextTheme"/>
+                    app:layout_constraintTop_toBottomOf="@+id/sp1" />
 
                 <Spinner
                     android:id="@+id/sp1"
@@ -129,8 +130,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.498"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/etModelo"
-                    />
+                    app:layout_constraintTop_toBottomOf="@+id/etModelo" />
 
                 <TextView
                     android:id="@+id/textView12"
@@ -139,6 +139,7 @@
                     android:layout_marginTop="40dp"
                     android:layout_marginBottom="20dp"
                     android:text="@string/cel"
+                    android:textColor="#2196F3"
                     android:textSize="22sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toTopOf="@+id/etID"

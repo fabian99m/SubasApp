@@ -698,6 +698,8 @@ color mtrl_textinput_hovered_box_stroke_color
 color notification_action_color_filter
 color notification_icon_bg_color
 color notification_material_background_media_default_color
+color primaryLightColor
+color primaryTextColor
 color primary_dark_material_dark
 color primary_dark_material_light
 color primary_material_dark
@@ -1163,9 +1165,9 @@ id fill_horizontal
 id fill_vertical
 id filled
 id fixed
-id fo
 id forever
 id fragCelular
+id fragOferta
 id fragOfertante
 id gama
 id ghost_view
@@ -1176,7 +1178,6 @@ id home
 id homeAsUp
 id icon
 id icon_group
-id id
 id idCedula
 id idDeposito
 id idNombre
@@ -1200,6 +1201,7 @@ id listaofer
 id listarCelulares
 id listarOfertantes
 id listarcel
+id ly
 id marca
 id masked
 id media_actions
@@ -1293,7 +1295,6 @@ id textSpacerNoTitle
 id textStart
 id textView
 id textView12
-id textView2
 id text_input_password_toggle
 id textinput_counter
 id textinput_error
@@ -1311,6 +1312,7 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
+id tv11
 id uniform
 id unlabeled
 id up
@@ -1386,8 +1388,8 @@ layout design_navigation_menu_item
 layout design_text_input_password_icon
 layout editar_celular
 layout editar_ofertante
-layout fragment_blank
 layout fragment_frag_celulares
+layout fragment_frag_oferta
 layout fragment_frag_ofertante
 layout fragment_listar_celulares
 layout fragment_listar_ofertantes
@@ -1499,6 +1501,7 @@ string navigation_drawer_close
 string navigation_drawer_open
 string nombre
 string ofer
+string oferta
 string ofertante
 string password_toggle_content_description
 string path_password_eye
@@ -1519,7 +1522,6 @@ style Animation_AppCompat_Tooltip
 style Animation_Design_BottomSheetDialog
 style AppTheme
 style AppTheme_AppBarOverlay
-style AppTheme_NoActionBar
 style AppTheme_PopupOverlay
 style Base_AlertDialog_AppCompat
 style Base_AlertDialog_AppCompat_Light
