@@ -57,10 +57,10 @@ public class AdaptadorCel extends RecyclerView.Adapter<AdaptadorCel.ViewHolderCe
         public ViewHolderCelulares(@NonNull View itemView) {
             super(itemView);
             id = itemView.findViewById(R.id.tv11);
-            marca = itemView.findViewById(R.id.marca);
-            modelo = itemView.findViewById(R.id.modelo);
+            marca = itemView.findViewById(R.id.etMarca);
+            modelo = itemView.findViewById(R.id.etModelo);
             gama = itemView.findViewById(R.id.gama);
-            costo = itemView.findViewById(R.id.costo);
+            costo = itemView.findViewById(R.id.etCosto);
             itemView.setOnClickListener(this::onClick);
         }
 

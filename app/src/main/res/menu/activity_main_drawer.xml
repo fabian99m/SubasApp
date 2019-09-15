@@ -14,12 +14,10 @@
             android:icon="@drawable/cellphone"
             android:title="@string/celu" />
 
-    </group>
-
-    <group android:checkableBehavior="single">
 
     <item android:title="@string/listar">
-        <menu>
+
+        <menu >
             <item
                 android:id="@+id/listarOfertantes"
                 android:icon="@drawable/users"

@@ -34,11 +34,11 @@ public class FragOfertante extends Fragment implements View.OnClickListener{
 
         View view = inflater.inflate(R.layout.fragment_frag_ofertante, container, false);
 
-        nombre = view.findViewById(R.id.etNombre);
+        nombre = view.findViewById(R.id.etMarca);
         cedula = view.findViewById(R.id.etCedula);
         deposito = view.findViewById(R.id.etDeposito);
 
-        Button button = view.findViewById(R.id.bt1);
+        Button button = view.findViewById(R.id.bt2);
         button.setOnClickListener(this::onClick);
 
         deposito.addTextChangedListener(new TextWatcher() {
@@ -76,7 +76,7 @@ public class FragOfertante extends Fragment implements View.OnClickListener{
 
     @Override
     public void onClick(View view) {
-        if (view.getId() == R.id.bt1) {
+        if (view.getId() == R.id.bt2) {
             GuardarOfertante();
         }
     }
